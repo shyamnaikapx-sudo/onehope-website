@@ -1,292 +1,206 @@
-export default function OneHopeSolutionWebsite() {
-  const services = [
-    {
-      id: '01',
-      title: 'New Facility Projects',
-      color: 'text-blue-800',
-      services: ['Cleanroom Design', 'Factory Setup (Pharma, API, Food)', 'HVAC & Validation'],
-      promise:
-        'We design and build your complete GMP-compliant facility from scratch, ready for approval.',
-      icon: '🏭',
-    },
-    {
-      id: '02',
-      title: 'Audit & Compliance',
-      color: 'text-green-700',
-      services: ['GMP Audits', 'US FDA/ISO Gap Analysis', 'Third-Party Audits'],
-      promise:
-        'We inspect your facility through an auditor’s lens to fix gaps before the real inspection.',
-      icon: '📋',
-    },
-    {
-      id: '03',
-      title: 'QMS & ISO Certification',
-      color: 'text-blue-700',
-      services: ['QMS Setup', 'ISO 9001, 22000, FSSC, BRCGS', 'Documentation'],
-      promise:
-        'We build your quality systems from the ground up to guarantee ISO or GMP certification.',
-      icon: '📄',
-    },
-    {
-      id: '04',
-      title: 'Regulatory & Dossier',
-      color: 'text-green-700',
-      services: ['CTD / eCTD', 'Documentation', 'Regulatory Submissions'],
-      promise:
-        'We prepare every document required for your product approvals and global submissions.',
-      icon: '📁',
-    },
-    {
-      id: '05',
-      title: 'Validation & Qualification',
-      color: 'text-blue-700',
-      services: ['Cleanroom Validation', 'Equipment Qualification', 'HVAC Testing'],
-      promise:
-        'We test and certify that your facility and equipment strictly meet international GMP standards.',
-      icon: '🧪',
-    },
-    {
-      id: '06',
-      title: 'Training & Support',
-      color: 'text-green-700',
-      services: ['GMP & SOP Training', 'Staff Readiness', 'Compliance Coaching'],
-      promise:
-        'We empower your team to handle audits confidently and follow proper procedures.',
-      icon: '👨‍🏫',
-    },
-    {
-      id: '07',
-      title: 'Ecommerce Services',
-      color: 'text-blue-700',
-      services: ['Product Listing', 'A+ Content Creation', 'Product Content Writing', 'Ecommerce Marketing'],
-      promise:
-        'We help you build a strong online presence and grow your sales across platforms.',
-      icon: '🛒',
-    },
-  ];
-
-  const additionalServices = [
-    {
-      title: 'Food Product & Packaging Development',
-      desc: 'We develop innovative, safe and market-ready food products with the right packaging solutions.',
-      icon: '🍱',
-    },
-    {
-      title: 'Food Packaging Design',
-      desc: 'We create functional, appealing and compliant packaging designs that strengthen your brand.',
-      icon: '📦',
-    },
-    {
-      title: 'Food Packaging Regulatory Check',
-      desc: 'We ensure your food packaging meets FSSAI, FDA and international regulatory requirements.',
-      icon: '✅',
-    },
-  ];
-
+function App() {
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-950 via-blue-900 to-green-800 text-white">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-white text-green-700 rounded-2xl p-4 text-3xl font-bold shadow-xl">
-                OH
-              </div>
-              <div>
-                <h1 className="text-4xl font-extrabold">ONE HOPE Solution</h1>
-                <p className="text-lg text-slate-200">
-                  Integrated Cleanroom & Pharma Regulatory Consultancy
-                </p>
-              </div>
-            </div>
+    <div style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: 0 }}>
 
-            <h2 className="text-5xl font-black leading-tight mb-6">
-              Your Partner in GMP Compliance & Regulatory Excellence
-            </h2>
+      {/* Navbar */}
+      <nav
+        style={{
+          background: "#0f172a",
+          color: "white",
+          padding: "15px 40px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h2>One Hope Solution</h2>
 
-            <p className="text-lg text-slate-200 mb-8 leading-relaxed">
-              End-to-end solutions for Pharma, API, Food & Healthcare industries.
-              We help businesses establish compliant facilities, quality systems,
-              validation programs and regulatory documentation.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-2xl font-semibold shadow-lg transition-all">
-                Get Consultation
-              </button>
-              <button className="border border-white px-6 py-3 rounded-2xl font-semibold hover:bg-white hover:text-blue-900 transition-all">
-                View Services
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop"
-              alt="Cleanroom Facility"
-              className="rounded-[2rem] shadow-2xl border-4 border-white/20"
-            />
-          </div>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <a href="#home" style={{ color: "white", textDecoration: "none" }}>Home</a>
+          <a href="#about" style={{ color: "white", textDecoration: "none" }}>About</a>
+          <a href="#services" style={{ color: "white", textDecoration: "none" }}>Services</a>
+          <a href="#contact" style={{ color: "white", textDecoration: "none" }}>Contact</a>
         </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section
+        id="home"
+        style={{
+          background: "linear-gradient(to right, #0f172a, #2563eb)",
+          color: "white",
+          padding: "100px 40px",
+          textAlign: "center",
+        }}
+      >
+        <h1 style={{ fontSize: "48px" }}>
+          GMP & Regulatory Consulting
+        </h1>
+
+        <p style={{ fontSize: "20px", marginTop: "20px" }}>
+          Your trusted partner for Pharma, Nutraceutical,
+          Food & Cosmetic compliance solutions.
+        </p>
+
+        <button
+          style={{
+            marginTop: "30px",
+            padding: "14px 30px",
+            border: "none",
+            background: "#22c55e",
+            color: "white",
+            borderRadius: "8px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Get Consultation
+        </button>
       </section>
 
-      {/* Services Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="text-center mb-14">
-          <h2 className="text-5xl font-black text-blue-950 mb-4">Our Services</h2>
-          <p className="text-xl text-slate-600">
-            Your Needs. Our Expertise. Your Compliance.
-          </p>
-        </div>
+      {/* About */}
+      <section id="about" style={{ padding: "80px 40px" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
+          About Us
+        </h2>
 
-        <div className="grid gap-8">
-          {services.map((service) => (
+        <p
+          style={{
+            maxWidth: "900px",
+            margin: "auto",
+            textAlign: "center",
+            lineHeight: "1.8",
+            fontSize: "18px",
+          }}
+        >
+          One Hope Solution provides expert consultancy in GMP compliance,
+          documentation support, regulatory affairs, product development,
+          quality systems, and nutraceutical formulation services.
+        </p>
+      </section>
+
+      {/* Services */}
+      <section
+        id="services"
+        style={{
+          background: "#f1f5f9",
+          padding: "80px 40px",
+        }}
+      >
+        <h2 style={{ textAlign: "center", marginBottom: "50px" }}>
+          Our Services
+        </h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "25px",
+          }}
+        >
+
+          {[
+            "GMP Documentation",
+            "Regulatory Consulting",
+            "Product Development",
+            "Label & Claims Review",
+            "Third Party Manufacturing",
+            "Stability Study Support",
+          ].map((service, index) => (
             <div
-              key={service.id}
-              className="bg-white rounded-[2rem] p-8 shadow-lg border border-slate-200 hover:shadow-2xl transition-all"
+              key={index}
+              style={{
+                background: "white",
+                padding: "30px",
+                borderRadius: "12px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              }}
             >
-              <div className="grid lg:grid-cols-3 gap-8 items-center">
-                <div className="flex items-center gap-6">
-                  <div className="bg-slate-100 h-24 w-24 rounded-full flex items-center justify-center text-5xl shadow-inner">
-                    {service.icon}
-                  </div>
+              <h3>{service}</h3>
 
-                  <div>
-                    <div className="bg-blue-900 text-white text-sm font-bold px-4 py-2 rounded-xl inline-block mb-3">
-                      {service.id}
-                    </div>
-                    <h3 className={`text-3xl font-extrabold ${service.color}`}>
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-bold text-slate-800 mb-4">Key Services</h4>
-                  <ul className="space-y-3">
-                    {service.services.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3 text-slate-700">
-                        <span className="text-green-600 font-bold">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <h4 className="text-xl font-bold text-blue-900 mb-4">
-                    Our Promise To You
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    “{service.promise}”
-                  </p>
-                </div>
-              </div>
+              <p style={{ marginTop: "15px", lineHeight: "1.6" }}>
+                Professional consulting and complete technical support
+                tailored for your business needs.
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Additional Services */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-black text-green-800 mb-4">
-              Additional Services
-            </h2>
-            <p className="text-lg text-slate-600">
-              Comprehensive support for food, packaging and ecommerce businesses.
-            </p>
-          </div>
+      {/* Contact */}
+      <section id="contact" style={{ padding: "80px 40px" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "40px" }}>
+          Contact Us
+        </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {additionalServices.map((item, index) => (
-              <div
-                key={index}
-                className="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 shadow-md hover:shadow-xl transition-all"
-              >
-                <div className="text-5xl mb-5">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-green-800 mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div
+          style={{
+            maxWidth: "600px",
+            margin: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Your Name"
+            style={{
+              padding: "14px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+            }}
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            style={{
+              padding: "14px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+            }}
+          />
+
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            style={{
+              padding: "14px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+            }}
+          />
+
+          <button
+            style={{
+              padding: "14px",
+              border: "none",
+              background: "#2563eb",
+              color: "white",
+              borderRadius: "8px",
+              fontSize: "16px",
+              cursor: "pointer",
+            }}
+          >
+            Send Message
+          </button>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop"
-              alt="Quality Compliance"
-              className="rounded-[2rem] shadow-2xl"
-            />
-          </div>
-
-          <div>
-            <h2 className="text-5xl font-black text-blue-950 mb-6">Who We Are</h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              We are a team of GMP, Regulatory & Quality experts helping businesses
-              build world-class facilities, achieve regulatory approvals and maintain
-              continuous compliance.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 mt-10">
-              <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-200">
-                <div className="text-4xl mb-3">🛡️</div>
-                <h4 className="font-bold text-lg mb-2">Compliance Assured</h4>
-                <p className="text-sm text-slate-600">
-                  GMP & ISO-focused regulatory excellence.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-200">
-                <div className="text-4xl mb-3">⭐</div>
-                <h4 className="font-bold text-lg mb-2">Quality Driven</h4>
-                <p className="text-sm text-slate-600">
-                  Systems built for long-term quality success.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="bg-gradient-to-r from-blue-950 to-green-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl mb-4">📧</div>
-              <h3 className="font-bold text-xl mb-2">Email Us</h3>
-              <p>info@onehopesolution.com</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl mb-4">🌐</div>
-              <h3 className="font-bold text-xl mb-2">Website</h3>
-              <p>www.onehopesolution.com</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl mb-4">📞</div>
-              <h3 className="font-bold text-xl mb-2">Call Us</h3>
-              <p>+91 9740802199</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-              <div className="text-4xl mb-4">🏢</div>
-              <h3 className="font-bold text-xl mb-2">Industries</h3>
-              <p>Pharma • API • Food • Healthcare</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Footer */}
+      <footer
+        style={{
+          background: "#0f172a",
+          color: "white",
+          textAlign: "center",
+          padding: "20px",
+        }}
+      >
+        © 2026 One Hope Solution. All Rights Reserved.
+      </footer>
     </div>
   );
 }
+
+export default App;
