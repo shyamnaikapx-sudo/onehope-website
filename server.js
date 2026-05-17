@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import OpenAI from "openai";
 
 dotenv.config();
-console.log(process.env.OPENAI_API_KEY);
+
 
 const app = express();
 
