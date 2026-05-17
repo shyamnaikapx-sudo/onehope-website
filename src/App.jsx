@@ -36,7 +36,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/ask-ai",
+        "https://onehope-live.onrender.com/api/ask-ai",
         {
           method: "POST",
 
