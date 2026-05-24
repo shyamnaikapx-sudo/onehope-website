@@ -102,162 +102,327 @@ function HomePage() {
 
       </header>
 
-      {/* HERO */}
+{/* HERO */}
 
-      <section
-        className="relative text-white min-h-screen flex items-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(2,16,63,0.78), rgba(2,16,63,0.82)), url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+<section
+  className="relative text-white min-h-screen flex items-center"
+  style={{
+    backgroundImage: `linear-gradient(rgba(2,16,63,0.82), rgba(2,16,63,0.86)), url(${heroImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 px-6 py-24 items-center">
+
+    {/* LEFT */}
+
+    <motion.div>
+
+      <div className="inline-block bg-green-500/20 text-green-300 px-5 py-2 rounded-full text-sm font-semibold">
+
+        AI-Powered Compliance Platform
+
+      </div>
+
+      <h1 className="mt-6 text-5xl md:text-6xl font-extrabold leading-tight">
+
+        AI-Powered Global
+        <br />
+        Pharma Compliance
+        <br />
+        Platform
+
+      </h1>
+
+      <p className="mt-8 text-xl text-gray-200 leading-9">
+
+        Simulate GMP audits, get instant compliance insights,
+        and prepare for global regulatory success.
+
+      </p>
+
+      <div className="mt-8 space-y-3 text-lg text-gray-200">
+
+        <p>
+          ✅ Supporting Pharma, API, Nutraceutical & Healthcare industries
+        </p>
+
+        <p>
+          👨‍🔬 Team having more than 15 years of experience in Pharma & Food industries
+        </p>
+
+      </div>
+
+      <div className="mt-10 flex flex-wrap gap-4">
+
+        <a href="/ai-audit-simulator">
+
+          <button className="bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
+
+            Start AI Audit Simulation
+
+          </button>
+
+        </a>
+
+        <a href="#ai">
+
+          <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+
+            Ask AI Expert
+
+          </button>
+
+        </a>
+
+        <a href="#contact">
+
+          <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+
+            Contact Us
+
+          </button>
+
+        </a>
+
+      </div>
+
+    </motion.div>
+
+    {/* RIGHT */}
+
+    <motion.div
+      id="ai"
+      className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[35px] p-8 shadow-2xl"
+    >
+
+      <h2 className="text-3xl font-extrabold text-white">
+
+        AI COMPLIANCE & TRAINING ASSISTANT
+
+      </h2>
+
+      <p className="mt-4 text-gray-200 leading-8">
+
+        Get AI-assisted GMP guidance, interview preparation,
+        audit support and Pharma compliance training backed
+        by industry expertise.
+
+      </p>
+
+      <input
+        type="text"
+        placeholder="Your Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="w-full mt-6 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
+      />
+
+      <input
+        type="text"
+        placeholder="Company Name"
+        value={company}
+        onChange={(e) => setCompany(e.target.value)}
+        className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
+      />
+
+      <input
+        type="email"
+        placeholder="Email Address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
+      />
+
+      <select
+        className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
       >
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 px-6 py-24 items-center">
+        <option className="text-black">
+          GMP Guidance
+        </option>
 
-          {/* LEFT */}
+        <option className="text-black">
+          GMP Interview Questions
+        </option>
 
-          <motion.div>
+        <option className="text-black">
+          GMP Training
+        </option>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+        <option className="text-black">
+          QA/QC Training
+        </option>
 
-              GMP COMPLIANCE
-              <br />
-              & REGULATORY
-              <br />
-              SOLUTIONS
+        <option className="text-black">
+          Regulatory Affairs
+        </option>
 
-            </h1>
+        <option className="text-black">
+          Audit Preparation
+        </option>
 
-            <p className="mt-8 text-xl text-gray-200 leading-9">
+      </select>
 
-              Supporting Pharma, API, Nutraceutical and Healthcare
-              companies with expert-led compliance solutions.
+      <textarea
+        value={question}
+        onChange={(e) => setQuestion(e.target.value)}
+        placeholder="Ask GMP, QA/QC, Validation, Regulatory or Interview Questions..."
+        className="w-full h-40 mt-4 rounded-2xl bg-white/20 border border-white/20 p-5 text-white"
+      />
 
-            </p>
+      <button
+        onClick={askAI}
+        className="bg-green-600 hover:bg-green-700 w-full py-4 rounded-2xl text-lg font-bold mt-6 text-white"
+      >
 
-            <div className="mt-8 space-y-3 text-lg text-gray-200">
+        {loading
+          ? "Thinking..."
+          : "ASK AI CONSULTANT"}
 
-              <p>
-                ✅ Supporting Pharma, API, Nutraceutical & Healthcare industries
-              </p>
+      </button>
 
-              <p>
-                👨‍🔬 Team having more than 15 years of experience in Pharma & Food industries
-              </p>
+      {answer && (
 
-            </div>
+        <div className="bg-white/10 rounded-2xl p-7 mt-6 text-gray-100 leading-8 whitespace-pre-line">
 
-          </motion.div>
-
-          {/* RIGHT */}
-
-          <motion.div
-            id="ai"
-            className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[35px] p-8 shadow-2xl"
-          >
-
-            <h2 className="text-3xl font-extrabold text-white">
-
-              AI COMPLIANCE & TRAINING ASSISTANT
-
-            </h2>
-
-            <p className="mt-4 text-gray-200 leading-8">
-
-              Get AI-assisted GMP guidance, interview preparation,
-              audit support and Pharma compliance training backed
-              by industry expertise.
-
-            </p>
-
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full mt-6 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-            />
-
-            <input
-              type="text"
-              placeholder="Company Name"
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-            />
-
-            <input
-              type="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-            />
-
-            <select
-              className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-            >
-
-              <option className="text-black">
-                GMP Guidance
-              </option>
-
-              <option className="text-black">
-                GMP Interview Questions
-              </option>
-
-              <option className="text-black">
-                GMP Training
-              </option>
-
-              <option className="text-black">
-                QA/QC Training
-              </option>
-
-              <option className="text-black">
-                Regulatory Affairs
-              </option>
-
-              <option className="text-black">
-                Audit Preparation
-              </option>
-
-            </select>
-
-            <textarea
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Ask GMP, QA/QC, Validation, Regulatory or Interview Questions..."
-              className="w-full h-40 mt-4 rounded-2xl bg-white/20 border border-white/20 p-5 text-white"
-            />
-
-            <button
-              onClick={askAI}
-              className="bg-green-600 hover:bg-green-700 w-full py-4 rounded-2xl text-lg font-bold mt-6 text-white"
-            >
-
-              {loading
-                ? "Thinking..."
-                : "ASK AI CONSULTANT"}
-
-            </button>
-
-            {answer && (
-
-              <div className="bg-white/10 rounded-2xl p-7 mt-6 text-gray-100 leading-8 whitespace-pre-line">
-
-                {answer}
-
-              </div>
-
-            )}
-
-          </motion.div>
+          {answer}
 
         </div>
 
-      </section>
+      )}
+
+    </motion.div>
+
+  </div>
+
+</section>
+{/* PROBLEM SOLUTION */}
+
+<section className="py-20 bg-white">
+
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h1 className="text-4xl font-extrabold text-blue-950">
+
+      Pharma Compliance Is Complex
+
+    </h1>
+
+    <p className="mt-6 text-xl text-gray-600 leading-9">
+
+      Manual audit preparation and regulatory compliance
+      processes consume time, resources and increase
+      inspection risks.
+
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-6 mt-14">
+
+      <div className="bg-[#f8fafc] rounded-[30px] p-8">
+
+        <h3 className="text-red-500 text-2xl font-bold">
+          ❌ Delayed Audit Preparation
+        </h3>
+
+      </div>
+
+      <div className="bg-[#f8fafc] rounded-[30px] p-8">
+
+        <h3 className="text-red-500 text-2xl font-bold">
+          ❌ Dependency on Experts
+        </h3>
+
+      </div>
+
+      <div className="bg-[#f8fafc] rounded-[30px] p-8">
+
+        <h3 className="text-red-500 text-2xl font-bold">
+          ❌ Risk of Non-Compliance
+        </h3>
+
+      </div>
+
+    </div>
+
+    <div className="mt-12 inline-block bg-green-100 text-green-700 px-8 py-4 rounded-full font-bold text-lg">
+
+      ✅ Now Simplified with AI
+
+    </div>
+
+  </div>
+
+</section>
+{/* CORE FEATURES */}
+
+<section className="py-20 bg-[#f8fafc]">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center">
+
+      <h1 className="text-5xl font-extrabold text-blue-950">
+
+        AI-Powered Compliance Tools
+
+      </h1>
+
+    </div>
+
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mt-16">
+
+      {[
+        {
+          title: "AI Expert",
+          desc: "Instant pharma compliance answers",
+        },
+
+        {
+          title: "AI Audit Simulator",
+          desc: "Simulate real GMP audits",
+        },
+
+        {
+          title: "AI Training",
+          desc: "Interactive GMP learning",
+        },
+
+        {
+          title: "Discussion Panel",
+          desc: "Industry knowledge exchange",
+        },
+
+      ].map((item, index) => (
+
+        <div
+          key={index}
+          className="bg-white rounded-[30px] p-8 shadow-md"
+        >
+
+          <h2 className="text-2xl font-extrabold text-blue-950">
+
+            {item.title}
+
+          </h2>
+
+          <p className="mt-5 text-gray-600 leading-8">
+
+            {item.desc}
+
+          </p>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
 
       {/* AI AUDIT SIMULATOR */}
 
@@ -483,7 +648,29 @@ function HomePage() {
         </div>
 
       </section>
+{/* GLOBAL TRUST */}
 
+<section className="py-16 bg-white">
+
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h1 className="text-4xl font-extrabold text-blue-950">
+
+      Supporting Pharma Professionals Globally
+
+    </h1>
+
+    <div className="flex justify-center gap-10 mt-10 text-2xl font-bold text-green-700">
+
+      <div>🌍 India</div>
+      <div>🌍 USA</div>
+      <div>🌍 Europe</div>
+
+    </div>
+
+  </div>
+
+</section>
       {/* HOW WE WORK */}
 
       <section className="py-16 bg-[#f8fafc]">
@@ -536,7 +723,56 @@ function HomePage() {
         </div>
 
       </section>
+{/* FINAL CTA */}
 
+<section className="py-20 bg-[#02103f] text-white">
+
+  <div className="max-w-5xl mx-auto px-6 text-center">
+
+    <h1 className="text-5xl font-extrabold leading-tight">
+
+      Need Professional GMP &
+      <br />
+      Regulatory Support?
+
+    </h1>
+
+    <p className="mt-8 text-xl text-gray-300 leading-9">
+
+      Get expert consultation from One Hope Solution.
+
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-5 mt-10">
+
+      <a
+        href="https://wa.me/919740802199"
+        target="_blank"
+      >
+
+        <button className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl text-lg font-bold">
+
+          Chat on WhatsApp
+
+        </button>
+
+      </a>
+
+      <a href="#contact">
+
+        <button className="bg-white/10 border border-white/20 px-8 py-4 rounded-2xl text-lg font-bold">
+
+          Contact Now
+
+        </button>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
       {/* FOOTER */}
 
       <footer
@@ -621,7 +857,19 @@ function HomePage() {
         </div>
 
       </footer>
+<a
+  href="https://wa.me/919740802199"
+  target="_blank"
+  className="fixed bottom-6 right-6 z-50"
+>
 
+  <div className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-2xl font-bold">
+
+    💬 WhatsApp Chat
+
+  </div>
+
+</a>
     </div>
 
   );
