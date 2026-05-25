@@ -303,6 +303,115 @@ function HomePage() {
   </div>
 
 </section>
+<section className="max-w-7xl mx-auto px-6 py-20">
+
+  <div className="bg-white rounded-[35px] shadow-xl p-12">
+
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div>
+
+        <h2 className="text-5xl font-extrabold text-blue-950 leading-tight">
+
+          We Are Not Just Consultants.
+          <br />
+          We Are Compliance Solution Providers.
+
+        </h2>
+
+        <p className="mt-8 text-lg leading-9 text-gray-700">
+
+          One Hope Solution delivers AI-powered GMP,
+          regulatory and compliance solutions for
+          Pharma, API, Nutraceutical, Food and
+          Healthcare industries.
+
+        </p>
+
+        <p className="mt-6 text-lg leading-9 text-gray-700">
+
+          We combine industry expertise with
+          intelligent AI-driven systems to improve
+          audit readiness, compliance management,
+          training and operational excellence.
+
+        </p>
+
+      </div>
+
+      <div className="grid grid-cols-2 gap-6">
+
+        <div className="bg-blue-50 rounded-3xl p-8 text-center">
+
+          <h3 className="text-5xl font-extrabold text-blue-950">
+
+            18+
+
+          </h3>
+
+          <p className="mt-4 text-gray-700 font-semibold">
+
+            Years Industry Experience
+
+          </p>
+
+        </div>
+
+        <div className="bg-green-50 rounded-3xl p-8 text-center">
+
+          <h3 className="text-5xl font-extrabold text-green-700">
+
+            AI
+
+          </h3>
+
+          <p className="mt-4 text-gray-700 font-semibold">
+
+            Compliance Solutions
+
+          </p>
+
+        </div>
+
+        <div className="bg-gray-100 rounded-3xl p-8 text-center">
+
+          <h3 className="text-5xl font-extrabold text-blue-950">
+
+            GMP
+
+          </h3>
+
+          <p className="mt-4 text-gray-700 font-semibold">
+
+            Audit Readiness
+
+          </p>
+
+        </div>
+
+        <div className="bg-blue-100 rounded-3xl p-8 text-center">
+
+          <h3 className="text-5xl font-extrabold text-blue-950">
+
+            Global
+
+          </h3>
+
+          <p className="mt-4 text-gray-700 font-semibold">
+
+            Compliance Support
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 {/* PROBLEM SOLUTION */}
 
 <section className="py-20 bg-white">
@@ -871,6 +980,92 @@ function HomePage() {
   </div>
 
 </section>
+<section className="max-w-7xl mx-auto px-6 py-20">
+
+  <div className="bg-blue-950 rounded-[35px] p-14 text-white text-center">
+
+    <h2 className="text-5xl font-extrabold">
+
+      Customized AI Audit Simulators
+
+    </h2>
+
+    <p className="mt-8 text-xl leading-9 text-gray-300 max-w-5xl mx-auto">
+
+      We develop customized AI audit simulators
+      based on organization-specific GMP,
+      ISO, regulatory and compliance requirements.
+
+    </p>
+
+    <p className="mt-6 text-xl leading-9 text-gray-300 max-w-5xl mx-auto">
+
+      AI performs intelligent gap assessment
+      based on user responses and can request
+      supporting documents as objective evidence
+      for compliance review and validation.
+
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-6 mt-12">
+
+      <a href="/interactive-ai-audit">
+
+        <button className="bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl font-bold text-xl">
+
+          Launch AI Audit
+
+        </button>
+
+      </a>
+
+      <a
+        href="https://wa.me/919740802199"
+        target="_blank"
+      >
+
+        <button className="bg-white/10 border border-white/20 px-10 py-5 rounded-2xl font-bold text-xl">
+
+          Talk to Expert
+
+        </button>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<div className="bg-green-500 rounded-[35px] p-12 text-center text-white">
+
+  <h2 className="text-5xl font-extrabold">
+
+    Need GMP or Regulatory Support?
+
+  </h2>
+
+  <p className="mt-6 text-xl">
+
+    Get a free compliance discussion with One Hope Solution.
+
+  </p>
+
+  <div className="flex flex-wrap justify-center gap-5 mt-10">
+
+    <a href="https://wa.me/919740802199">
+
+      <button className="bg-white text-green-700 px-8 py-4 rounded-2xl font-bold text-lg">
+
+        Chat on WhatsApp
+
+      </button>
+
+    </a>
+
+  </div>
+
+</div>
       {/* FOOTER */}
 
       <footer

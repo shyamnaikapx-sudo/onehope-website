@@ -12,7 +12,15 @@ function InteractiveAudit() {
 
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+const [showLeadForm, setShowLeadForm] = useState(false);
 
+const [leadData, setLeadData] = useState({
+  name: "",
+  company: "",
+  email: "",
+  whatsapp: "",
+  country: "",
+});
 const sendMessage = async () => {
 
   if (!input.trim()) return;
@@ -55,7 +63,14 @@ const sendMessage = async () => {
     console.log("AI RESPONSE:", data);
 
     if (data.reply) {
+if (
+  data.reply.includes("FINAL CONCLUSION") ||
+  data.reply.includes("recommend professional audit support")
+) {
 
+  setShowLeadForm(true);
+
+}
       const aiMessage = {
         role: "ai",
         text: data.reply,
@@ -153,7 +168,109 @@ const sendMessage = async () => {
           </div>
 
         </div>
+{showLeadForm && (
 
+  <div className="bg-white rounded-[35px] shadow-xl p-10 mt-16">
+
+    <div className="text-center">
+
+      <h2 className="text-4xl font-extrabold text-blue-950">
+
+        Get Your AI Audit Assessment Summary
+
+      </h2>
+
+      <p className="mt-5 text-lg text-gray-600">
+
+        Receive your audit readiness observations,
+        compliance gaps and recommendations.
+
+      </p>
+
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-6 mt-10">
+
+      <input
+        type="text"
+        placeholder="Name"
+        value={leadData.name}
+        onChange={(e) =>
+          setLeadData({
+            ...leadData,
+            name: e.target.value,
+          })
+        }
+        className="border border-gray-300 rounded-2xl p-5"
+      />
+
+      <input
+        type="text"
+        placeholder="Company"
+        value={leadData.company}
+        onChange={(e) =>
+          setLeadData({
+            ...leadData,
+            company: e.target.value,
+          })
+        }
+        className="border border-gray-300 rounded-2xl p-5"
+      />
+
+      <input
+        type="email"
+        placeholder="Email"
+        value={leadData.email}
+        onChange={(e) =>
+          setLeadData({
+            ...leadData,
+            email: e.target.value,
+          })
+        }
+        className="border border-gray-300 rounded-2xl p-5"
+      />
+
+      <input
+        type="text"
+        placeholder="WhatsApp"
+        value={leadData.whatsapp}
+        onChange={(e) =>
+          setLeadData({
+            ...leadData,
+            whatsapp: e.target.value,
+          })
+        }
+        className="border border-gray-300 rounded-2xl p-5"
+      />
+
+      <input
+        type="text"
+        placeholder="Country"
+        value={leadData.country}
+        onChange={(e) =>
+          setLeadData({
+            ...leadData,
+            country: e.target.value,
+          })
+        }
+        className="border border-gray-300 rounded-2xl p-5 md:col-span-2"
+      />
+
+    </div>
+
+    <div className="text-center mt-10">
+
+      <button className="bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-2xl font-bold text-xl">
+
+        Generate My Audit Report
+
+      </button>
+
+    </div>
+
+  </div>
+
+)}
         {/* FINAL CTA */}
 
         <div className="bg-blue-950 rounded-[35px] text-white p-10 mt-16 text-center">
