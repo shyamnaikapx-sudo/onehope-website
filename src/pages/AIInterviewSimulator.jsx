@@ -42,6 +42,8 @@ function AIInterviewSimulator() {
 
   try {
 
+    console.log("Starting interview...");
+
     const response = await fetch(
       "https://onehope-live.onrender.com/api/ai-interview-start",
       {
@@ -52,22 +54,110 @@ function AIInterviewSimulator() {
         },
 
         body: JSON.stringify({
-          interest: formData.interest,
-          name: formData.name,
-        }),
+  
+  interest: formData.interest,
+  name: formData.name,
+}),
       }
     );
 
-    const data = await response.json();
+    console.log(response);
+
+    if (!response.ok) {
+
+  throw new Error("API failed");
+
+}
+
+const data = await response.json();
+
+    console.log(data);
 
     setMessages([
       {
         role: "ai",
-        text: data.question,
+        text:
+          data.question ||
+          "Tell me about yourself and your professional background.",
       },
     ]);
 
+    setQuestionCount(1);
+
     setStep(2);
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert("Interview start failed");
+
+  }
+
+  setLoading(false);
+};
+
+const sendMessage = async () => {
+
+  if (!input.trim()) return;
+
+  const updatedMessages = [
+    ...messages,
+    {
+      role: "user",
+      text: input,
+    },
+  ];
+  console.log(updatedMessages);
+
+  setMessages(updatedMessages);
+
+  setInput("");
+
+  setLoading(true);
+
+  try {
+
+   const response = await fetch(
+  "https://onehope-live.onrender.com/api/ai-interview",
+  {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    body: JSON.stringify({
+      interest: formData.interest,
+      name: formData.name,
+    }),
+  }
+);
+
+
+    const data = await response.json();
+
+    if (data.reply) {
+
+  const aiMessage = {
+    role: "ai",
+    text: data.reply,
+  };
+
+  setMessages((prev) => [
+    ...prev,
+    aiMessage,
+  ]);
+
+  setQuestionCount((prev) => prev + 1);
+
+}
+
+    if (data.finalReport) {
+
+      setReport(data.finalReport);
+
+    }
 
   } catch (error) {
 
@@ -77,7 +167,6 @@ function AIInterviewSimulator() {
 
   setLoading(false);
 };
-
 
   return (
 
@@ -178,7 +267,6 @@ function AIInterviewSimulator() {
               onClick={handleStart}
               className="mt-8 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold"
             >
-
               Start AI Interview
 
             </button>
