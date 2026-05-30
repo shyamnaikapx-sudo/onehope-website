@@ -680,16 +680,18 @@ AI interview simulator helps candidates practice real interview scenarios and im
 
               </div>
 
-              <h1 className="mt-6 text-3xl md:text-4xl font-bold text-white leading-tight">
+<h1 className="mt-6 text-3xl md:text-4xl font-bold text-white leading-tight">
 
-                AI Audit Simulator for GMP Compliance & Pharma Audit Readiness
-                <p className="mt-4 text-base text-gray-200 leading-8">
+  AI Audit Simulator for GMP Compliance & Pharma Audit Readiness
+
+</h1>
+
+<p className="mt-4 text-base text-gray-200 leading-8">
 
   Our AI audit simulator helps pharmaceutical companies prepare for GMP audits, USFDA inspections and compliance checks by identifying potential gaps before inspection.
 
 </p>
 
-              </h1>
 
               <p className="mt-6 text-base text-gray-200 leading-8">
 
@@ -741,31 +743,27 @@ AI interview simulator helps candidates practice real interview scenarios and im
 
   </a>
 
-  <a href="/ai-audit-simulator">
+<a href="/ai-audit-simulator">
 
-    <button className="w-full bg-green-500 hover:bg-green-600 py-4 rounded-2xl text-lg font-bold text-white">
+  <button className="w-full bg-green-500 hover:bg-green-600 py-4 rounded-2xl text-lg font-bold text-white">
 
-      🚀 Start Audit Simulation
+    🚀 Start Audit Simulation
 
-    </button>
-    <div className="mt-6 text-center">
+  </button>
+</a>
+
+<div className="mt-6 text-center">
 
   <p className="text-yellow-300 font-semibold">
-
     ⚠️ Most audit gaps are identified during inspections.
-
   </p>
 
   <p className="text-white mt-2">
-
     Identify them before it happens.
-
   </p>
 
 </div>
     
-
-  </a>
 
 </div>
             </div>
@@ -1049,17 +1047,6 @@ AI interview simulator helps candidates practice real interview scenarios and im
     <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
 
       Launch Interactive Audit Simulator
-      🚀 Need Complete Audit Readiness Support?
-
-AI simulation provides initial insights.
-
-✔ Documentation Review
-✔ GAP Analysis
-✔ CAPA Recommendations
-✔ Audit Readiness Support
-
-[💬 Chat on WhatsApp]
-[📩 Request Audit Support]
 
     </button>
 
@@ -1333,13 +1320,8 @@ AI simulation provides initial insights.
         </div>
 
       </footer>
-<a
-  href="https://wa.me/919740802199"
-  target="_blank"
-  className="fixed bottom-6 right-6 z-50"
->
+{/* Mobile Sticky CTA */}
 
-  <div className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-2xl font-bold">
 <div className="fixed bottom-0 left-0 right-0 md:hidden bg-blue-950 p-3 z-40">
 
   <a href="/ai-interview-simulator">
@@ -1353,13 +1335,24 @@ AI simulation provides initial insights.
   </a>
 
 </div>
+
+{/* WhatsApp Floating Button */}
+
+<a
+  href="https://wa.me/919740802199"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-16 right-6 z-50"
+>
+
+  <div className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-2xl font-bold">
+
     💬 WhatsApp Chat
 
   </div>
 
 </a>
-    </div>
-
+</div>
   );
 }
 
