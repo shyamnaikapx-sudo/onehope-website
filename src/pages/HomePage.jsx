@@ -65,59 +65,66 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
             <img
               src={logo}
               alt="logo"
-              className="w-16"
+              className="w-10 md:w-16"
             />
 
             <div>
 
-              <h1 className="text-3xl font-extrabold text-blue-950">
+              <h1 className="text-xl md:text-3xl font-extrabold text-blue-950">
                 ONE HOPE
               </h1>
 
-              <p className="text-gray-600">
+              <p className="hidden md:block text-gray-600">
                 Solution
               </p>
 
             </div>
 
           </div>
+ {/* Desktop Menu */}
+
+<div className="hidden lg:flex gap-8 font-semibold text-blue-950">
+
+  <a href="/">HOME</a>
+
+  <a href="/ai-interview-simulator">
+    AI INTERVIEW
+  </a>
+
+  <a href="/interactive-ai-audit">
+    INTERACTIVE AI AUDIT
+  </a>
+
+  <a href="/ai-audit-simulator">
+    AUDIT SIMULATOR
+  </a>
+
+  <a href="#services">
+    SERVICES
+  </a>
+
+  <a href="#ai">
+    AI ASSISTANT
+  </a>
+
+  <a href="#contact">
+    CONTACT
+  </a>
+
+</div>
+
+{/* Mobile Hamburger */}
+
 <button
   className="lg:hidden text-blue-950 text-3xl"
   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 >
   ☰
 </button>
-          <div className="hidden lg:flex gap-8 font-semibold text-blue-950">
+    </div>
 
-           <a href="/">HOME</a>
-
-<a
-  href="/ai-interview-simulator"
-  className="hover:text-green-400 transition"
->
-  AI INTERVIEW
-</a>
-
-<a
-  href="/interactive-ai-audit"
-  className="hover:text-green-400 transition"
->
-  INTERACTIVE AI AUDIT
-</a>
-
-<a href="/ai-audit-simulator">
-  AUDIT SIMULATOR
-</a>
-
-<a href="#services">SERVICES</a>
-
-<a href="#ai">AI ASSISTANT</a>
-
-<a href="#contact">CONTACT</a>
-          </div>
-
-        </div>
-{mobileMenuOpen && (
+      </header>
+      {mobileMenuOpen && (
 
   <div className="lg:hidden bg-white border-t shadow-md">
 
@@ -154,14 +161,13 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   </div>
 
 )}
-      </header>
 
 {/* HERO */}
 
 <section
   className="relative text-white min-h-screen flex items-center"
   style={{
-    backgroundImage: `linear-gradient(rgba(2,16,63,0.82), rgba(2,16,63,0.86)), url(${heroImage})`,
+    backgroundImage: `linear-gradient(rgba(2,16,63,0.94), rgba(2,16,63,0.95)), url(${heroImage})`,
 
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -890,7 +896,7 @@ AI interview simulator helps candidates practice real interview scenarios and im
 
           <div className="text-center">
 
-            <h1 className="text-3xl md:text-4xl font-bold text-blue-950">
+            <h1 className="text-xl md:text-3xl font-extrabold text-blue-950">
 
               Our Services
 
@@ -1322,7 +1328,7 @@ AI interview simulator helps candidates practice real interview scenarios and im
       </footer>
 {/* Mobile Sticky CTA */}
 
-<div className="fixed bottom-0 left-0 right-0 md:hidden bg-blue-950 p-3 z-40">
+<div className="fixed bottom-0 left-0 right-0 lg:hidden bg-blue-950 p-3 z-40">
 
   <a href="/ai-interview-simulator">
 
