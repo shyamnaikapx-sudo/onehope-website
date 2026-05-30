@@ -12,7 +12,7 @@ function HomePage() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
-
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const askAI = async () => {
 
     setLoading(true);
@@ -81,35 +81,79 @@ function HomePage() {
             </div>
 
           </div>
-
+<button
+  className="lg:hidden text-blue-950 text-3xl"
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+>
+  ☰
+</button>
           <div className="hidden lg:flex gap-8 font-semibold text-blue-950">
 
-            <a href="/">HOME</a>
+           <a href="/">HOME</a>
 
-            <a href="#services">SERVICES</a>
-<a
-  href="/interactive-ai-audit"
-  className="hover:text-green-400 transition"
->
-  INTERACTIVE AI AUDIT
-</a>
-            <a href="/ai-audit-simulator">
-              AUDIT SIMULATOR
-            </a>
 <a
   href="/ai-interview-simulator"
   className="hover:text-green-400 transition"
 >
   AI INTERVIEW
 </a>
-            <a href="#ai">AI ASSISTANT</a>
 
-            <a href="#contact">CONTACT</a>
+<a
+  href="/interactive-ai-audit"
+  className="hover:text-green-400 transition"
+>
+  INTERACTIVE AI AUDIT
+</a>
 
+<a href="/ai-audit-simulator">
+  AUDIT SIMULATOR
+</a>
+
+<a href="#services">SERVICES</a>
+
+<a href="#ai">AI ASSISTANT</a>
+
+<a href="#contact">CONTACT</a>
           </div>
 
         </div>
+{mobileMenuOpen && (
 
+  <div className="lg:hidden bg-white border-t shadow-md">
+
+    <div className="flex flex-col p-4 space-y-4 font-semibold text-blue-950">
+
+      <a href="/">HOME</a>
+
+      <a href="/ai-interview-simulator">
+        AI INTERVIEW
+      </a>
+
+      <a href="/interactive-ai-audit">
+        INTERACTIVE AI AUDIT
+      </a>
+
+      <a href="/ai-audit-simulator">
+        AUDIT SIMULATOR
+      </a>
+
+      <a href="#services">
+        SERVICES
+      </a>
+
+      <a href="#ai">
+        AI ASSISTANT
+      </a>
+
+      <a href="#contact">
+        CONTACT
+      </a>
+
+    </div>
+
+  </div>
+
+)}
       </header>
 
 {/* HERO */}
@@ -125,7 +169,7 @@ function HomePage() {
   
 >
 
-  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 px-6 py-16 items-center">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 md:px-6 py-10 md:py-16 items-center">
 
     {/* LEFT */}
 
@@ -137,15 +181,15 @@ function HomePage() {
 
       </div>
 
-      <h1 className="mt-6 text-4xl md:text-5xl font-bold leading-tight">
+      <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
 
-        AI-Powered Global
-        <br />
-        Pharma Compliance
-        <br />
-        Platform
+  AI-Powered GMP
+  <br />
+  Compliance, Audit Readiness
+  <br />
+  & Interview Preparation
 
-      </h1>
+</h1>
 
       <p className="mt-8 text-base md:text-lg text-gray-200 leading-8 max-w-2xl">
 
@@ -166,39 +210,49 @@ function HomePage() {
 
       </div>
 
-      <div className="mt-10 flex flex-wrap gap-4">
+      <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
-        <a href="/ai-audit-simulator">
+  <a href="/ai-interview-simulator">
 
-          <button className="bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
 
-            Start AI Audit Simulation
+      🚀 Start AI Interview
 
-          </button>
+    </button>
 
-        </a>
+  </a>
 
-        <a href="#ai">
+  <a href="/interactive-ai-audit">
 
-          <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="bg-blue-700 hover:bg-blue-800 px-7 py-4 rounded-2xl font-bold text-lg">
 
-            Ask AI Expert
+      🧪 Start AI Audit
 
-          </button>
+    </button>
 
-        </a>
+  </a>
 
-        <a href="#contact">
+  <a href="#ai">
 
-          <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
 
-            Contact Us
+      Ask AI Expert
 
-          </button>
+    </button>
 
-        </a>
+  </a>
 
-      </div>
+  <a href="#contact">
+
+    <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+
+      Contact Us
+
+    </button>
+
+  </a>
+
+</div>
 
     </motion.div>
 
@@ -310,10 +364,64 @@ function HomePage() {
   </div>
 
 </section>
-<section className="max-w-7xl mx-auto px-6 py-20">
 
-  <div className="bg-white rounded-[35px] shadow-xl p-12">
+<section className="py-16 bg-white">
 
+  <div className="max-w-6xl mx-auto px-6">
+
+    <h2 className="text-4xl font-extrabold text-center text-blue-950">
+      Choose Your Path
+    </h2>
+
+    <p className="text-center text-gray-600 mt-4">
+      Whether you are a company preparing for audits or a professional preparing for interviews, we have an AI-powered solution for you.
+    </p>
+
+    <div className="grid md:grid-cols-2 gap-8 mt-12">
+
+      <div className="bg-blue-50 p-8 rounded-3xl shadow-lg">
+
+        <h3 className="text-2xl font-bold text-blue-950">
+          🧪 For Organizations
+        </h3>
+
+        <p className="mt-4 text-gray-700 leading-7">
+          Improve audit readiness, identify compliance gaps and prepare for GMP, ISO and regulatory inspections.
+        </p>
+
+        <a href="/interactive-ai-audit">
+          <button className="mt-6 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold">
+            Start Audit Assessment
+          </button>
+        </a>
+
+      </div>
+
+      <div className="bg-green-50 p-8 rounded-3xl shadow-lg">
+
+        <h3 className="text-2xl font-bold text-blue-950">
+          🎯 For Individuals
+        </h3>
+
+        <p className="mt-4 text-gray-700 leading-7">
+          Practice realistic interviews, improve confidence and receive instant AI-powered feedback.
+        </p>
+
+        <a href="/ai-interview-simulator">
+          <button className="mt-6 bg-blue-950 hover:bg-blue-900 text-white px-6 py-3 rounded-xl font-bold">
+            Start AI Interview
+          </button>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  <section className="max-w-7xl mx-auto px-6 py-20">
+<div className="bg-white rounded-[35px] shadow-xl p-12">
     <div className="grid lg:grid-cols-2 gap-12 items-center">
 
       <div>
@@ -492,7 +600,70 @@ function HomePage() {
 
 </section>
 
+<section className="py-20 bg-white">
 
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-[40px] p-10 text-white shadow-2xl">
+
+      <div className="inline-block bg-white/20 px-4 py-2 rounded-full font-semibold">
+        Most Popular For Professionals
+      </div>
+
+      <h2 className="mt-6 text-4xl font-extrabold">
+        AI Interview Simulator for Practice & Career Preparation
+      </h2>
+
+      <p className="mt-6 text-xl leading-8 max-w-3xl">
+        Nervous about what an interviewer might ask?
+
+Practice realistic interview scenarios with our AI Interview Simulator and receive intelligent feedback before facing the actual interview panel.
+
+AI interview simulator helps candidates practice real interview scenarios and improve performance using intelligent feedback.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-4 mt-8">
+
+        <div>✅ Realistic interview questions</div>
+        <div>✅ Instant AI feedback</div>
+        <div>✅ QA / QC / GMP focused</div>
+        <div>✅ Regulatory Affairs interviews</div>
+        <div>✅ Production interviews</div>
+        <div>✅ Unlimited practice sessions</div>
+
+      </div>
+
+<div className="mt-10 flex flex-wrap gap-4">
+
+  <a href="/ai-interview-simulator">
+
+    <button className="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-2xl font-bold text-lg">
+
+      🎯 Start Interview Practice
+
+    </button>
+
+  </a>
+
+  <a
+    href="https://wa.me/919740802199"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <button className="bg-white/10 border border-white px-8 py-4 rounded-2xl font-bold">
+
+      💬 Talk to Expert
+
+    </button>
+
+  </a>
+
+</div>
+</div>
+</div>
+
+</section>
       {/* AI AUDIT SIMULATOR */}
 
       <section className="py-20 bg-white">
@@ -511,7 +682,12 @@ function HomePage() {
 
               <h1 className="mt-6 text-3xl md:text-4xl font-bold text-white leading-tight">
 
-                AI Audit Simulator
+                AI Audit Simulator for GMP Compliance & Pharma Audit Readiness
+                <p className="mt-4 text-base text-gray-200 leading-8">
+
+  Our AI audit simulator helps pharmaceutical companies prepare for GMP audits, USFDA inspections and compliance checks by identifying potential gaps before inspection.
+
+</p>
 
               </h1>
 
@@ -553,25 +729,45 @@ function HomePage() {
 
               </div>
 
-              <a href="/ai-audit-simulator">
-              <a href="/interactive-ai-audit">
+              <div className="mt-8 space-y-4">
 
-  <button className="bg-white text-blue-950 hover:bg-gray-100 px-7 py-4 rounded-2xl font-bold text-lg shadow-xl">
+  <a href="/interactive-ai-audit">
 
-    Interactive AI Audit Simulator
+    <button className="w-full bg-white text-blue-950 hover:bg-gray-100 py-4 rounded-2xl font-bold text-lg shadow-xl">
 
-  </button>
+      Interactive AI Audit Simulator
 
-</a>
+    </button>
 
-                <button className="w-full mt-8 bg-green-500 hover:bg-green-600 py-4 rounded-2xl text-lg font-bold text-white">
+  </a>
 
-                  Launch Audit Simulator
+  <a href="/ai-audit-simulator">
 
-                </button>
+    <button className="w-full bg-green-500 hover:bg-green-600 py-4 rounded-2xl text-lg font-bold text-white">
 
-              </a>
+      🚀 Start Audit Simulation
 
+    </button>
+    <div className="mt-6 text-center">
+
+  <p className="text-yellow-300 font-semibold">
+
+    ⚠️ Most audit gaps are identified during inspections.
+
+  </p>
+
+  <p className="text-white mt-2">
+
+    Identify them before it happens.
+
+  </p>
+
+</div>
+    
+
+  </a>
+
+</div>
             </div>
 
           </div>
@@ -607,7 +803,7 @@ function HomePage() {
 
     <a href="/interactive-ai-audit">
 
-      <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold text-lg">
+      <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
 
         Launch Interactive AI Audit
 
@@ -633,6 +829,59 @@ function HomePage() {
 </div>
 
       {/* SERVICES */}
+      <section className="py-16 bg-yellow-50">
+
+  <div className="max-w-5xl mx-auto px-6 text-center">
+
+    <h2 className="text-4xl font-extrabold text-blue-950">
+
+      🚀 Need Complete Audit Readiness Support?
+
+    </h2>
+
+    <p className="mt-6 text-lg text-gray-700">
+
+      AI simulation provides initial insights.
+
+      For complete audit preparation you may need:
+
+    </p>
+
+    <div className="mt-8 space-y-3">
+
+      <p>✔ Documentation Review</p>
+      <p>✔ GAP Analysis</p>
+      <p>✔ CAPA Recommendations</p>
+      <p>✔ Audit Readiness Support</p>
+
+    </div>
+
+    <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
+
+      <a
+        href="https://wa.me/919740802199"
+        target="_blank"
+      >
+        <button className="bg-green-500 text-white px-8 py-4 rounded-2xl font-bold">
+
+          💬 Chat on WhatsApp
+
+        </button>
+      </a>
+
+      <a href="#contact">
+        <button className="bg-blue-950 text-white px-8 py-4 rounded-2xl font-bold">
+
+          📩 Request Audit Support
+
+        </button>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
       <section
         id="services"
@@ -797,9 +1046,20 @@ function HomePage() {
 
   <a href="/interactive-ai-audit">
 
-    <button className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-2xl font-bold text-base mt-10">
+    <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
 
       Launch Interactive Audit Simulator
+      🚀 Need Complete Audit Readiness Support?
+
+AI simulation provides initial insights.
+
+✔ Documentation Review
+✔ GAP Analysis
+✔ CAPA Recommendations
+✔ Audit Readiness Support
+
+[💬 Chat on WhatsApp]
+[📩 Request Audit Support]
 
     </button>
 
@@ -908,7 +1168,7 @@ function HomePage() {
         target="_blank"
       >
 
-        <button className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl text-lg font-bold">
+        <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
 
           Chat on WhatsApp
 
@@ -931,7 +1191,7 @@ function HomePage() {
   </div>
 
 </section>
-<section className="max-w-7xl mx-auto px-6 py-20">
+<section className="py-16 bg-white">
 
   <div className="bg-blue-950 rounded-[35px] p-14 text-white text-center">
 
@@ -962,7 +1222,7 @@ function HomePage() {
 
       <a href="/interactive-ai-audit">
 
-        <button className="bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl font-bold text-xl">
+        <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
 
           Launch AI Audit
 
@@ -1080,7 +1340,19 @@ function HomePage() {
 >
 
   <div className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-2xl font-bold">
+<div className="fixed bottom-0 left-0 right-0 md:hidden bg-blue-950 p-3 z-40">
 
+  <a href="/ai-interview-simulator">
+
+    <button className="w-full bg-green-500 text-white py-3 rounded-xl font-bold">
+
+      🚀 Start AI Interview
+
+    </button>
+
+  </a>
+
+</div>
     💬 WhatsApp Chat
 
   </div>
