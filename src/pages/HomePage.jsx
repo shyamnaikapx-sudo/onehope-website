@@ -1,6 +1,5 @@
 import logo from "../assets/logo.png";
 import heroImage from "../assets/hero-pharma.jpg";
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -13,7 +12,9 @@ function HomePage() {
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const askAI = async () => {
+  const [videoUrl, setVideoUrl] = useState("");
+  const [showVideo, setShowVideo] = useState(false);
+const askAI = async () => {
 
     setLoading(true);
 
@@ -370,6 +371,31 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   </div>
 
 </section>
+ <section className="py-16 bg-white">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 className="text-4xl font-extrabold text-blue-950">
+      Introducing One Hope Solution
+    </h2>
+
+    <p className="mt-4 text-gray-600">
+      Learn how One Hope Solution combines compliance expertise,
+      audit readiness and AI-powered solutions.
+    </p>
+<div className="mt-8">
+  <img
+    src="/corporate-video-thumb.png"
+    alt="Corporate Video"
+    className="w-full rounded-2xl shadow-xl cursor-pointer"
+    onClick={() => {
+      setVideoUrl("https://www.youtube.com/embed/Arveb0iF02U");
+      setShowVideo(true);
+    }}
+  />
+</div>
+
+  </div>
+</section>
 
 <section className="py-16 bg-white">
 
@@ -604,6 +630,31 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   </div>
 
+</section>
+{/* AI Interview Demo Video */}
+<section className="py-16 bg-white">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 className="text-4xl font-extrabold text-blue-950">
+      Watch AI Interview Simulator Demo
+    </h2>
+
+    <p className="mt-4 text-gray-600">
+      Experience how candidates prepare for QA, QC, GMP and Regulatory Affairs interviews using AI.
+    </p>
+    <div className="mt-8">
+  <img
+    src="/interview-video-thumb.png"
+    alt="AI Interview Demo"
+    className="w-full rounded-2xl shadow-xl cursor-pointer"
+    onClick={() => {
+      setVideoUrl("https://www.youtube.com/embed/Ku-OeaR6YTU");
+      setShowVideo(true);
+    }}
+  />
+</div>
+
+  </div>
 </section>
 
 <section className="py-20 bg-white">
@@ -1292,7 +1343,25 @@ AI interview simulator helps candidates practice real interview scenarios and im
             <h3 className="text-lg font-bold">
 
               CONTACT
+<div className="mt-6">
+  <h4 className="text-xl font-semibold mb-2">
+    📍 Office Address
+  </h4>
 
+  <p>
+    Nava Vaibhava Apartment
+    <br />
+    Sir M. Vishveshwaraya Road
+    <br />
+    Horamavu Agara
+    <br />
+    Horamavu
+    <br />
+    Bangalore, Karnataka
+    <br />
+    India
+  </p>
+</div>
             </h3>
 
             <div className="mt-4 space-y-2 text-gray-300 text-sm">
@@ -1358,8 +1427,27 @@ AI interview simulator helps candidates practice real interview scenarios and im
   </div>
 
 </a>
+{showVideo && (
+  <div
+    onClick={() => setShowVideo(false)}
+    className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]"
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="w-[90%] max-w-4xl aspect-video"
+    >
+      <iframe
+        width="100%"
+        height="100%"
+        src={videoUrl}
+        title="Video"
+        frameBorder="0"
+        allowFullScreen
+      />
+    </div>
+  </div>
+)}
 </div>
   );
 }
-
 export default HomePage;
