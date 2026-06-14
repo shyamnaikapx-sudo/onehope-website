@@ -1,3 +1,4 @@
+import ClinicalProtocolAI from "./pages/ClinicalProtocolAI";
 import AIInterviewSimulator from "./pages/AIInterviewSimulator";
 import InteractiveAudit from "./pages/InteractiveAudit";
 import {
@@ -12,7 +13,12 @@ function App() {
 
   return (
 
+
     <Routes>
+      <Route
+  path="/clinical-protocol-ai"
+  element={<ClinicalProtocolAI />}
+/>
 <Route
   path="/interactive-ai-audit"
   element={<InteractiveAudit />}

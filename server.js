@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import OpenAI from "openai";
+import multer from "multer";
 
 dotenv.config();
 
@@ -15,7 +16,9 @@ app.use(express.json());
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
+const upload = multer({
+  storage: multer.memoryStorage(),
+});
 
 
 // EXISTING AI CONSULTANT API
@@ -443,28 +446,20 @@ const completion =
 
       {
         role: "system",
-        content: interviewPrompt
+        content: reviewPrompt
       },
 
-      ...(messages || []).map((m) => ({
-
-        role:
-          m.role === "ai"
-            ? "assistant"
-            : "user",
-
-        content:
-          m.text || "No response"
-
-      }))
+      {
+        role: "user",
+        content: protocolText
+      }
 
     ],
 
-    temperature: 0.5,
-    max_tokens: 250,
+    temperature: 0.3,
+    max_tokens: 1000
 
   });
-
     res.json({
 
       reply:
@@ -483,9 +478,194 @@ const completion =
   }
 
 });
+app.post("/api/clinical-protocol-analysis", async (req, res) => {
+
+  try {
+
+    const {
+  protocolText,
+  reviewType,
+} = req.body;
+ // ADD THE PROMPT SECTION HERE ↓↓↓
+
+    let reviewPrompt = "";
+
+    if (reviewType === "ICH-GCP Compliance") {
+
+      reviewPrompt = `
+You are an ICH-GCP compliance expert.
+
+Review the protocol for:
+- ICH-GCP compliance gaps
+- Subject protection
+- Ethics requirements
+- Informed consent concerns
+- Documentation requirements
+
+Provide compliance score (0-100).
+`;
+
+    }
+
+    else if (reviewType === "Endpoint Assessment") {
+
+      reviewPrompt = `
+You are a clinical endpoint specialist.
+
+Review:
+- Primary endpoint suitability
+- Secondary endpoint suitability
+- Statistical robustness
+- Clinical relevance
+
+Provide endpoint quality score (0-100).
+`;
+
+    }
+else if (reviewType === "Regulatory Risk Assessment") {
+
+  reviewPrompt = `
+You are a global clinical regulatory expert.
+
+Review:
+- FDA risks
+- EMA risks
+- ICH compliance risks
+- Ethics risks
+- Inspection readiness
+
+Provide:
+- Risk Level
+- Critical Findings
+- Recommended Actions
+`;
+}
+
+else if (reviewType === "Recruitment Feasibility") {
+
+  reviewPrompt = `
+You are a clinical operations expert.
+
+Assess:
+- Inclusion criteria feasibility
+- Exclusion criteria impact
+- Recruitment challenges
+- Dropout risk
+- Site burden
+
+Provide recruitment feasibility score (0-100).
+`;
+}
+ else if (reviewType === "Sample Size Assessment") {
+
+  reviewPrompt = `
+You are a biostatistics expert.
+
+Review:
+- Sample size adequacy
+- Statistical power
+- Study design assumptions
+- Risk of underpowering
+
+Provide Sample Size Adequacy Score (0-100).
+`;
+}
+else if (reviewType === "Safety Monitoring Review") {
+
+  reviewPrompt = `
+You are a clinical safety expert.
+
+Review:
+- Safety endpoints
+- AE monitoring
+- SAE reporting
+- Risk mitigation
+
+Provide Patient Safety Score (0-100).
+`;
+}
+else if (reviewType === "Protocol Amendment Impact") {
+
+  reviewPrompt = `
+You are a clinical development expert.
+
+Assess:
+- Operational impact
+- Regulatory impact
+- Recruitment impact
+- Data integrity impact
+
+Provide Amendment Risk Score (0-100).
+`;
+}  
+else {
+
+      reviewPrompt = `
+You are a Senior Clinical Trial Protocol Reviewer.
+
+Review the protocol and provide:
+
+PROTOCOL SUMMARY
+
+PRIMARY OBJECTIVE ASSESSMENT
+
+INCLUSION CRITERIA ASSESSMENT
+
+EXCLUSION CRITERIA ASSESSMENT
+
+OPERATIONAL RISKS
+
+REGULATORY RISKS
+
+RECOMMENDED IMPROVEMENTS
+
+PROTOCOL QUALITY SCORE (0-100)
+`;
+    }
+
+    const completion =
+      await client.chat.completions.create({
+
+        model: "gpt-4o-mini",
+
+        messages: [
+
+          {
+  role: "system",
+  content: reviewPrompt
+},
+
+          {
+            role: "user",
+            content: protocolText
+          }
+
+        ],
+
+        temperature: 0.3,
+        max_tokens: 1000
+
+      });
+
+    res.json({
+
+      result:
+        completion.choices[0].message.content
+
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      result: "Protocol analysis failed"
+    });
+
+  }
+
+});
 
 app.listen(5000, () => {
-
   console.log("Server running on port 5000");
-
 });

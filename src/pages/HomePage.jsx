@@ -63,54 +63,211 @@ const askAI = async () => {
 
           <div className="flex items-center gap-4">
 
-            <img
-              src={logo}
-              alt="logo"
-              className="w-10 md:w-16"
-            />
 
-            <div>
+            <div className="flex items-center gap-3">
+  <img
+    src={logo}
+    alt="One Hope Solution"
+    className="w-14 md:w-20"
+  />
 
-              <h1 className="text-xl md:text-3xl font-extrabold text-blue-950">
-                ONE HOPE
-              </h1>
+  <div className="flex flex-col">
+    <h1 className="text-2xl md:text-4xl font-extrabold text-blue-950 leading-none">
+  ONE HOPE
+</h1>
 
-              <p className="hidden md:block text-gray-600">
-                Solution
-              </p>
+<h2 className="text-xs md:text-sm font-semibold tracking-[0.15em] text-blue-950 uppercase">
+  SOLUTION
+</h2>
 
-            </div>
+<p className="text-[10px] md:text-xs text-gray-500 leading-tight mt-1">
+  Integrated Pharma & Regulatory Solutions
+</p>
+  </div>
+</div>
 
           </div>
  {/* Desktop Menu */}
 
-<div className="hidden lg:flex gap-8 font-semibold text-blue-950">
+<div className="hidden xl:flex gap-6 font-semibold text-blue-950 text-sm xl:text-base items-center">
 
   <a href="/">HOME</a>
 
-  <a href="/ai-interview-simulator">
-    AI INTERVIEW
+  <div className="relative group">
+
+  <a
+    href="#"
+    className="whitespace-nowrap"
+  >
+    GAP ASSESSMENT
   </a>
 
-  <a href="/interactive-ai-audit">
-    INTERACTIVE AI AUDIT
+  <div
+    className="
+      absolute
+      hidden
+      group-hover:block
+      bg-white
+      border
+      shadow-xl
+      rounded-lg
+      p-5
+      w-80
+      top-full
+      mt-2
+      left-0
+      z-50
+    "
+  >
+
+    <h3 className="font-bold text-blue-950 mb-3">
+      Audit & Compliance Tools
+    </h3>
+
+    <ul className="text-sm space-y-2 text-gray-700">
+
+      <li>
+        <a href="/interactive-ai-audit">
+          ✓ Interactive AI Audit
+        </a>
+      </li>
+
+      <li>
+        <a href="/ai-audit-simulator">
+          ✓ Audit Readiness Simulator
+        </a>
+      </li>
+
+      <li>
+        ✓ GMP Gap Assessment
+      </li>
+
+      <li>
+        ✓ Regulatory Gap Assessment
+      </li>
+
+      <li>
+        ✓ Inspection Readiness Check
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+<div className="relative group">
+  <a
+    href="/clinical-protocol-ai"
+    className="whitespace-nowrap"
+  >
+    CLINICAL AI
   </a>
 
-  <a href="/ai-audit-simulator">
-    AUDIT SIMULATOR
-  </a>
+  <div
+    className="
+      absolute
+      hidden
+      group-hover:block
+      bg-white
+      border
+      shadow-xl
+      rounded-lg
+      p-5
+      w-80
+      top-8
+      left-0
+      z-50
+    "
+  >
 
-  <a href="#services">
+    <h3 className="font-bold text-blue-950 mb-3">
+      Clinical Trial Protocol Intelligence AI
+    </h3>
+
+    <ul className="text-sm space-y-2 text-gray-700">
+
+      <li>✓ Protocol Review</li>
+      <li>✓ ICH-GCP Compliance</li>
+      <li>✓ Regulatory Risk Assessment</li>
+      <li>✓ Recruitment Feasibility</li>
+      <li>✓ Sample Size Review</li>
+      <li>✓ Safety Monitoring Review</li>
+      <li>✓ Amendment Impact Assessment</li>
+
+    </ul>
+
+    <a
+      href="/clinical-protocol-ai"
+      className="block mt-4 font-bold text-blue-900"
+    >
+      Try Free →
+    </a>
+
+  </div>
+
+</div>
+  
+
+  <div className="relative group">
+
+  <a
+    href="#services"
+    className="whitespace-nowrap"
+  >
     SERVICES
   </a>
 
-  <a href="#ai">
-    AI ASSISTANT
-  </a>
+  <div
+    className="
+      absolute
+      hidden
+      group-hover:block
+      bg-white
+      border
+      shadow-xl
+      rounded-lg
+      p-5
+      w-80
+      top-8
+      left-0
+      z-50
+    "
+  >
+
+    <h3 className="font-bold text-blue-950 mb-3">
+      One Hope Solution Services
+    </h3>
+
+    <ul className="text-sm space-y-2 text-gray-700">
+
+      <li>✓ GMP Consultancy</li>
+      <li>✓ Regulatory Affairs</li>
+      <li>✓ FSSAI Support</li>
+      <li>✓ Pharmaceutical dossier</li>
+      <li>✓ Plant Design & Setup</li>
+      <li>✓ Quality Management Systems</li>
+      <li>✓ Validation Services</li>
+      <li>✓ Audit Readiness Support</li>
+      <li>✓ Training & Workshops</li>
+      <li>✓ Product Development Support</li>
+
+    </ul>
+
+    <a
+      href="#services"
+      className="block mt-4 font-bold text-blue-900"
+    >
+      Explore Services →
+    </a>
+
+  </div>
+
+</div>
 
   <a href="#contact">
     CONTACT
   </a>
+
 
 </div>
 
@@ -144,6 +301,9 @@ const askAI = async () => {
       <a href="/ai-audit-simulator">
         AUDIT SIMULATOR
       </a>
+      <a href="/clinical-protocol-ai">
+  CLINICAL AI
+</a>
 
       <a href="#services">
         SERVICES
