@@ -399,17 +399,17 @@ const askAI = async () => {
 
       <h1 className="mt-6 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
 
-  AI-Powered GMP
-  <br />
-  Compliance, Audit Readiness
-  <br />
-  & Interview Preparation
+  AI-Powered Pharma
+<br />
+Compliance & Regulatory Solutions,
+<br />
+Audit Readiness & Clinical Protocol Review
 
 </h1>
 
       <p className="mt-8 text-base md:text-lg text-gray-200 leading-8 max-w-2xl">
 
-        AI-powered GMP audits, clinical protocol review, regulatory intelligence and compliance solutions for Pharma organizations.
+        AI-powered GMP audits, clinical protocol review, regulatory intelligence, validation support and compliance solutions for Pharma, Nutraceutical, API and Healthcare organizations.
 
       </p>
 
@@ -733,7 +733,18 @@ const askAI = async () => {
           <h2 className="text-lg font-bold text-blue-950">
             {item.title}
           </h2>
-
+<a
+  href={
+    item.title.includes("Clinical")
+      ? "/clinical-protocol-ai"
+      : item.title.includes("Interview")
+      ? "/ai-interview-simulator"
+      : "/interactive-ai-audit"
+  }
+  className="inline-block mt-4 text-blue-900 font-bold"
+>
+  Launch →
+</a>
           <p className="mt-3 text-sm text-gray-600 leading-6">
             {item.desc}
           </p>
@@ -787,7 +798,7 @@ const askAI = async () => {
 
             <h1 className="text-xl md:text-3xl font-extrabold text-blue-950">
 
-              Our Services
+              Integrated Compliance & Regulatory Services
 
             </h1>
 
@@ -1118,7 +1129,39 @@ const askAI = async () => {
               <p>Monday - Saturday</p>
               <p>9:00 AM - 6:00 PM</p>
               <p>Online Consultation Available</p>
+<div className="flex gap-6 mt-6 justify-center">
 
+  <a
+    href="https://linkedin.com"
+    target="_blank"
+    rel="noreferrer"
+  >
+    LinkedIn
+  </a>
+
+  <a
+    href="https://youtube.com"
+    target="_blank"
+    rel="noreferrer"
+  >
+    YouTube
+  </a>
+
+  <a
+    href="https://wa.me/91XXXXXXXXXX"
+    target="_blank"
+    rel="noreferrer"
+  >
+    WhatsApp
+  </a>
+
+  <a
+    href="mailto:info@onehopesolution.com"
+  >
+    Email
+  </a>
+
+</div>
             </div>
 
           </div>
