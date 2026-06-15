@@ -207,7 +207,56 @@ const askAI = async () => {
 
 </div>
   
+<div className="relative group">
 
+  <a
+    href="/ai-interview-simulator"
+    className="whitespace-nowrap"
+  >
+    INTERVIEW AI
+  </a>
+
+  <div
+    className="
+      absolute
+      hidden
+      group-hover:block
+      bg-white
+      border
+      shadow-xl
+      rounded-lg
+      p-5
+      w-72
+      top-full
+      mt-2
+      left-0
+      z-50
+    "
+  >
+
+    <h3 className="font-bold text-blue-950 mb-3">
+      Interview Training
+    </h3>
+
+    <ul className="text-sm space-y-2 text-gray-700">
+
+      <li>✓ Pharma Interview Simulator</li>
+      <li>✓ HR Interview Simulator</li>
+      <li>✓ QA/QC Interview Practice</li>
+      <li>✓ GMP Training Support</li>
+
+    </ul>
+
+    <a
+      href="/ai-interview-simulator"
+      className="block mt-4 font-bold text-blue-900"
+    >
+      Launch →
+    </a>
+
+  </div>
+
+</div>
   <div className="relative group">
 
   <a
@@ -348,7 +397,7 @@ const askAI = async () => {
 
       </div>
 
-      <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+      <h1 className="mt-6 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
 
   AI-Powered GMP
   <br />
@@ -360,8 +409,7 @@ const askAI = async () => {
 
       <p className="mt-8 text-base md:text-lg text-gray-200 leading-8 max-w-2xl">
 
-        Simulate GMP audits, get instant compliance insights,
-        and prepare for global regulatory success.
+        AI-powered GMP audits, clinical protocol review, regulatory intelligence and compliance solutions for Pharma organizations.
 
       </p>
 
@@ -381,7 +429,7 @@ const askAI = async () => {
 
   <a href="/ai-interview-simulator">
 
-    <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-5 py-3 rounded-2xl font-bold text-lg">
 
       🚀 Start AI Interview
 
@@ -391,7 +439,7 @@ const askAI = async () => {
 
   <a href="/interactive-ai-audit">
 
-    <button className="bg-blue-700 hover:bg-blue-800 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="bg-blue-700 hover:bg-blue-800 px-5 py-3 rounded-2xl font-bold text-lg">
 
       🧪 Start AI Audit
 
@@ -401,7 +449,7 @@ const askAI = async () => {
 
   <a href="#ai">
 
-    <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="bg-white/10 border border-white/20 px-5 py-3 rounded-2xl font-bold text-lg">
 
       Ask AI Expert
 
@@ -411,7 +459,7 @@ const askAI = async () => {
 
   <a href="#contact">
 
-    <button className="bg-white/10 border border-white/20 px-7 py-4 rounded-2xl font-bold text-lg">
+    <button className="bg-white/10 border border-white/20 px-5 py-3 rounded-2xl font-bold text-lg">
 
       Contact Us
 
@@ -432,41 +480,16 @@ const askAI = async () => {
 
       <h2 className="text-3xl font-extrabold text-white">
 
-        AI COMPLIANCE & TRAINING ASSISTANT
+        AI ASSISTANT
 
       </h2>
 
       <p className="mt-4 text-gray-200 leading-8">
 
-        Get AI-assisted GMP guidance, interview preparation,
-        audit support and Pharma compliance training backed
-        by industry expertise.
+        Ask GMP, QA/QC, Regulatory, Validation and Interview questions instantly.
 
       </p>
 
-      <input
-        type="text"
-        placeholder="Your Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="w-full mt-6 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-      />
-
-      <input
-        type="text"
-        placeholder="Company Name"
-        value={company}
-        onChange={(e) => setCompany(e.target.value)}
-        className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-      />
-
-      <input
-        type="email"
-        placeholder="Email Address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
-      />
 
       <select
         className="w-full mt-4 rounded-2xl bg-white/20 border border-white/20 p-4 text-white"
@@ -502,7 +525,7 @@ const askAI = async () => {
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
         placeholder="Ask GMP, QA/QC, Validation, Regulatory or Interview Questions..."
-        className="w-full h-40 mt-4 rounded-2xl bg-white/20 border border-white/20 p-5 text-white"
+        className="w-full h-32 mt-4 rounded-2xl bg-white/20 border border-white/20 p-5 text-white"
       />
 
       <button
@@ -557,61 +580,6 @@ const askAI = async () => {
   </div>
 </section>
 
-<section className="py-16 bg-white">
-
-  <div className="max-w-6xl mx-auto px-6">
-
-    <h2 className="text-4xl font-extrabold text-center text-blue-950">
-      Choose Your Path
-    </h2>
-
-    <p className="text-center text-gray-600 mt-4">
-      Whether you are a company preparing for audits or a professional preparing for interviews, we have an AI-powered solution for you.
-    </p>
-
-    <div className="grid md:grid-cols-2 gap-8 mt-12">
-
-      <div className="bg-blue-50 p-8 rounded-3xl shadow-lg">
-
-        <h3 className="text-2xl font-bold text-blue-950">
-          🧪 For Organizations
-        </h3>
-
-        <p className="mt-4 text-gray-700 leading-7">
-          Improve audit readiness, identify compliance gaps and prepare for GMP, ISO and regulatory inspections.
-        </p>
-
-        <a href="/interactive-ai-audit">
-          <button className="mt-6 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold">
-            Start Audit Assessment
-          </button>
-        </a>
-
-      </div>
-
-      <div className="bg-green-50 p-8 rounded-3xl shadow-lg">
-
-        <h3 className="text-2xl font-bold text-blue-950">
-          🎯 For Individuals
-        </h3>
-
-        <p className="mt-4 text-gray-700 leading-7">
-          Practice realistic interviews, improve confidence and receive instant AI-powered feedback.
-        </p>
-
-        <a href="/ai-interview-simulator">
-          <button className="mt-6 bg-blue-950 hover:bg-blue-900 text-white px-6 py-3 rounded-xl font-bold">
-            Start AI Interview
-          </button>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
   <section className="max-w-7xl mx-auto px-6 py-20">
 <div className="bg-white rounded-[35px] shadow-xl p-12">
     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -728,58 +696,46 @@ const askAI = async () => {
 
     <div className="text-center">
 
-      <h1 className="text-xl font-extrabold text-blue-950">
-
+      <h1 className="text-4xl font-extrabold text-blue-950">
         AI-Powered Compliance Tools
-
       </h1>
 
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-14">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
 
       {[
         {
-          title: "AI Expert",
-          desc: "Instant pharma compliance answers",
+          title: "Clinical Trial Protocol Intelligence AI",
+          desc:
+            "Protocol review, ICH-GCP compliance, endpoint assessment and regulatory risk analysis.",
         },
 
         {
-          title: "Quick Audit Check",
-          desc: "Simulate real GMP audits",
-        },
-  {
-    title: "Interactive AI Auditor",
-    desc:
-      "Experience realistic GMP audit conversations with AI-powered compliance analysis and gap assessment.",
-  },
-        {
-          title: "GMP Training AI",
-          desc: "Interactive GMP learning",
+          title: "AI Audit & Gap Assessment",
+          desc:
+            "Interactive AI audits, audit readiness simulation and GMP compliance gap identification.",
         },
 
         {
-          title: "Discussion Panel",
-          desc: "Industry knowledge exchange",
+          title: "AI Interview Simulator",
+          desc:
+            "Pharma, QA, QC, GMP and HR interview preparation with AI-powered feedback.",
         },
 
       ].map((item, index) => (
 
         <div
           key={index}
-          className="bg-white rounded-2xl p-5 shadow-md min-h-[190px] w-full"
+          className="bg-white rounded-2xl p-5 shadow-md min-h-[190px]"
         >
 
-          <h2 className="text-lg font-bold text-blue-950 leading-7">
-
+          <h2 className="text-lg font-bold text-blue-950">
             {item.title}
-
           </h2>
 
           <p className="mt-3 text-sm text-gray-600 leading-6">
-
             {item.desc}
-
           </p>
 
         </div>
@@ -817,286 +773,8 @@ const askAI = async () => {
   </div>
 </section>
 
-<section className="py-20 bg-white">
-
-  <div className="max-w-7xl mx-auto px-6">
-
-    <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-[40px] p-10 text-white shadow-2xl">
-
-      <div className="inline-block bg-white/20 px-4 py-2 rounded-full font-semibold">
-        Most Popular For Professionals
-      </div>
-
-      <h2 className="mt-6 text-4xl font-extrabold">
-        AI Interview Simulator for Practice & Career Preparation
-      </h2>
-
-      <p className="mt-6 text-xl leading-8 max-w-3xl">
-        Nervous about what an interviewer might ask?
-
-Practice realistic interview scenarios with our AI Interview Simulator and receive intelligent feedback before facing the actual interview panel.
-
-AI interview simulator helps candidates practice real interview scenarios and improve performance using intelligent feedback.
-      </p>
-
-      <div className="grid md:grid-cols-2 gap-4 mt-8">
-
-        <div>✅ Realistic interview questions</div>
-        <div>✅ Instant AI feedback</div>
-        <div>✅ QA / QC / GMP focused</div>
-        <div>✅ Regulatory Affairs interviews</div>
-        <div>✅ Production interviews</div>
-        <div>✅ Unlimited practice sessions</div>
-
-      </div>
-
-<div className="mt-10 flex flex-wrap gap-4">
-
-  <a href="/ai-interview-simulator">
-
-    <button className="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-2xl font-bold text-lg">
-
-      🎯 Start Interview Practice
-
-    </button>
-
-  </a>
-
-  <a
-    href="https://wa.me/919740802199"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-
-    <button className="bg-white/10 border border-white px-8 py-4 rounded-2xl font-bold">
-
-      💬 Talk to Expert
-
-    </button>
-
-  </a>
-
-</div>
-</div>
-</div>
-
-</section>
-      {/* AI AUDIT SIMULATOR */}
-
-      <section className="py-20 bg-white">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="bg-gradient-to-r from-blue-950 to-[#0f2f75] rounded-[40px] p-8 md:p-10 grid lg:grid-cols-2 gap-14 items-center shadow-2xl">
-
-            <div>
-
-              <div className="inline-block bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-semibold">
-
-                Innovative AI Compliance Tool
-
-              </div>
-
-<h1 className="mt-6 text-3xl md:text-4xl font-bold text-white leading-tight">
-
-  AI Audit Simulator for GMP Compliance & Pharma Audit Readiness
-
-</h1>
-
-<p className="mt-4 text-base text-gray-200 leading-8">
-
-  Our AI audit simulator helps pharmaceutical companies prepare for GMP audits, USFDA inspections and compliance checks by identifying potential gaps before inspection.
-
-</p>
-
-
-              <p className="mt-6 text-base text-gray-200 leading-8">
-
-                Practice WHO GMP & USFDA inspections using AI-powered
-                audit simulations with instant audit evaluation,
-                CAPA recommendations and audit readiness scoring.
-
-              </p>
-
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-2xl">
-
-              <h2 className="text-3xl font-extrabold text-blue-950">
-
-                Available Simulations
-
-              </h2>
-
-              <div className="mt-8 space-y-5">
-
-                <div className="bg-[#f4f7fb] rounded-2xl p-5">
-
-                  <h3 className="font-bold text-blue-950">
-                    WHO GMP Audit
-                  </h3>
-
-                </div>
-
-                <div className="bg-[#f4f7fb] rounded-2xl p-5">
-
-                  <h3 className="font-bold text-blue-950">
-                    USFDA Inspection
-                  </h3>
-
-                </div>
-
-              </div>
-
-              <div className="mt-8 space-y-4">
-
-  <a href="/interactive-ai-audit">
-
-    <button className="w-full bg-white text-blue-950 hover:bg-gray-100 py-4 rounded-2xl font-bold text-lg shadow-xl">
-
-      Interactive AI Audit Simulator
-
-    </button>
-
-  </a>
-
-<a href="/ai-audit-simulator">
-
-  <button className="w-full bg-green-500 hover:bg-green-600 py-4 rounded-2xl text-lg font-bold text-white">
-
-    🚀 Start Audit Simulation
-
-  </button>
-</a>
-
-<div className="mt-6 text-center">
-
-  <p className="text-yellow-300 font-semibold">
-    ⚠️ Most audit gaps are identified during inspections.
-  </p>
-
-  <p className="text-white mt-2">
-    Identify them before it happens.
-  </p>
-
-</div>
-    
-
-</div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-      <div className="bg-white rounded-[35px] shadow-xl p-10 mt-16">
-
-  <h2 className="text-4xl font-extrabold text-blue-950 text-center">
-
-    AI-Powered Audit Intelligence
-
-  </h2>
-
-  <p className="mt-8 text-lg leading-9 text-gray-700 text-center max-w-5xl mx-auto">
-
-    AI performs gap assessment based on your responses,
-    and where required, it can request supporting documents
-    as objective evidence for review and validation.
-
-  </p>
-
-  <p className="mt-8 text-lg leading-9 text-gray-700 text-center max-w-5xl mx-auto">
-
-    We develop customized AI audit simulators based on
-    your specific audit requirements, enabling organizations
-    to simulate real audit scenarios and improve compliance readiness.
-
-  </p>
-
-  <div className="flex flex-wrap justify-center gap-5 mt-10">
-
-    <a href="/interactive-ai-audit">
-
-      <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
-
-        Launch Interactive AI Audit
-
-      </button>
-
-    </a>
-
-    <a
-      href="https://wa.me/919740802199"
-      target="_blank"
-    >
-
-      <button className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-4 rounded-2xl font-bold text-lg">
-
-        Talk to AI Audit Expert
-
-      </button>
-
-    </a>
-
-  </div>
-
-</div>
 
       {/* SERVICES */}
-      <section className="py-16 bg-yellow-50">
-
-  <div className="max-w-5xl mx-auto px-6 text-center">
-
-    <h2 className="text-4xl font-extrabold text-blue-950">
-
-      🚀 Need Complete Audit Readiness Support?
-
-    </h2>
-
-    <p className="mt-6 text-lg text-gray-700">
-
-      AI simulation provides initial insights.
-
-      For complete audit preparation you may need:
-
-    </p>
-
-    <div className="mt-8 space-y-3">
-
-      <p>✔ Documentation Review</p>
-      <p>✔ GAP Analysis</p>
-      <p>✔ CAPA Recommendations</p>
-      <p>✔ Audit Readiness Support</p>
-
-    </div>
-
-    <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
-
-      <a
-        href="https://wa.me/919740802199"
-        target="_blank"
-      >
-        <button className="bg-green-500 text-white px-8 py-4 rounded-2xl font-bold">
-
-          💬 Chat on WhatsApp
-
-        </button>
-      </a>
-
-      <a href="#contact">
-        <button className="bg-blue-950 text-white px-8 py-4 rounded-2xl font-bold">
-
-          📩 Request Audit Support
-
-        </button>
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
 
       <section
         id="services"
@@ -1242,57 +920,7 @@ AI interview simulator helps candidates practice real interview scenarios and im
         </div>
 
       </section>
-      <div className="bg-blue-950 text-white rounded-[35px] p-12 text-center mt-12">
-
-  <h2 className="text-5xl font-extrabold">
-
-    Experience Realistic AI GMP Audits
-
-  </h2>
-
-  <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto leading-9">
-
-    Simulate real auditor conversations,
-    identify compliance gaps and improve
-    inspection readiness with AI-powered
-    audit simulations.
-
-  </p>
-
-  <a href="/interactive-ai-audit">
-
-    <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
-
-      Launch Interactive Audit Simulator
-
-    </button>
-
-  </a>
-
-</div>
-{/* GLOBAL TRUST */}
-
-<section className="py-16 bg-white">
-
-  <div className="max-w-6xl mx-auto px-6 text-center">
-
-    <h1 className="text-4xl font-extrabold text-blue-950">
-
-      Supporting Pharma Professionals Globally
-
-    </h1>
-
-    <div className="flex justify-center gap-10 mt-10 text-2xl font-bold text-green-700">
-
-      <div>🌍 India</div>
-      <div>🌍 USA</div>
-      <div>🌍 Europe</div>
-
-    </div>
-
-  </div>
-
-</section>
+      
       {/* HOW WE WORK */}
 
       <section className="py-16 bg-[#f8fafc]">
@@ -1309,7 +937,7 @@ AI interview simulator helps candidates practice real interview scenarios and im
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
 
             {[
               "Discussion",
@@ -1385,63 +1013,6 @@ AI interview simulator helps candidates practice real interview scenarios and im
         <button className="bg-white/10 border border-white/20 px-8 py-4 rounded-2xl text-lg font-bold">
 
           Contact Now
-
-        </button>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-<section className="py-16 bg-white">
-
-  <div className="bg-blue-950 rounded-[35px] p-14 text-white text-center">
-
-    <h2 className="text-5xl font-extrabold">
-
-      Customized AI Audit Simulators
-
-    </h2>
-
-    <p className="mt-8 text-xl leading-9 text-gray-300 max-w-5xl mx-auto">
-
-      We develop customized AI audit simulators
-      based on organization-specific GMP,
-      ISO, regulatory and compliance requirements.
-
-    </p>
-
-    <p className="mt-6 text-xl leading-9 text-gray-300 max-w-5xl mx-auto">
-
-      AI performs intelligent gap assessment
-      based on user responses and can request
-      supporting documents as objective evidence
-      for compliance review and validation.
-
-    </p>
-
-    <div className="flex flex-wrap justify-center gap-6 mt-12">
-
-      <a href="/interactive-ai-audit">
-
-        <button className="w-full sm:w-auto bg-green-500 hover:bg-green-600 px-7 py-4 rounded-2xl font-bold text-lg">
-
-          Launch AI Audit
-
-        </button>
-
-      </a>
-
-      <a
-        href="https://wa.me/919740802199"
-        target="_blank"
-      >
-
-        <button className="bg-white/10 border border-white/20 px-10 py-5 rounded-2xl font-bold text-xl">
-
-          Talk to Expert
 
         </button>
 
