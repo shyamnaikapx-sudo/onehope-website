@@ -46,7 +46,7 @@ setMessages([]);
     console.log("Starting interview...");
 setLoading(true);
     const response = await fetch(
-      "https://onehope-live.onrender.com/api/ai-interview-start",
+      "https://onehope-website.onrender.com/api/ai-interview-start",
       {
         method: "POST",
 

@@ -11,7 +11,7 @@ const [loading, setLoading] = useState(false);
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/clinical-protocol-analysis",
+        "https://onehope-website.onrender.com/api/clinical-protocol-analysis",
         {
           method: "POST",
           headers: {

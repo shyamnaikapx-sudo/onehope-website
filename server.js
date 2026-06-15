@@ -446,20 +446,28 @@ const completion =
 
       {
         role: "system",
-        content: reviewPrompt
+        content: interviewPrompt
       },
 
-      {
-        role: "user",
-        content: protocolText
-      }
+      ...(messages || []).map((m) => ({
+
+        role:
+          m.role === "ai"
+            ? "assistant"
+            : "user",
+
+        content:
+          m.text || "No response"
+
+      }))
 
     ],
 
-    temperature: 0.3,
-    max_tokens: 1000
+    temperature: 0.5,
+    max_tokens: 250,
 
   });
+     
     res.json({
 
       reply:
@@ -666,6 +674,8 @@ PROTOCOL QUALITY SCORE (0-100)
 
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
