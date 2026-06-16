@@ -677,7 +677,39 @@ PROTOCOL QUALITY SCORE (0-100)
 }
 
 });
+app.get("/api/test-openai", async (req, res) => {
+  try {
 
+    const response =
+      await client.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "user",
+            content: "Say OK"
+          }
+        ]
+      });
+
+    res.json({
+      success: true,
+      result:
+        response.choices[0].message.content
+    });
+
+  } catch (error) {
+
+    console.error("OPENAI TEST ERROR");
+    console.error(error);
+
+    res.status(500).json({
+      error: error.message,
+      code: error.code,
+      type: error.type
+    });
+
+  }
+});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
