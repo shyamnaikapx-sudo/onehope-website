@@ -663,14 +663,13 @@ PROTOCOL QUALITY SCORE (0-100)
     });
 
   } catch (error) {
+  console.error("CLINICAL AI ERROR:");
+  console.error(error);
 
-    console.log(error);
-
-    res.status(500).json({
-      result: "Protocol analysis failed"
-    });
-
-  }
+  res.status(500).json({
+    result: error.message
+  });
+}
 
 });
 
