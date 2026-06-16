@@ -710,6 +710,11 @@ app.get("/api/test-openai", async (req, res) => {
 
   }
 });
+app.get("/api/version", (req, res) => {
+  res.json({
+    version: "June17-Test-001"
+  });
+});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
