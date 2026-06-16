@@ -6,6 +6,10 @@ import OpenAI from "openai";
 import multer from "multer";
 
 dotenv.config();
+console.log(
+  "KEY LENGTH:",
+  process.env.OPENAI_API_KEY?.length
+);
 
 const app = express();
 
