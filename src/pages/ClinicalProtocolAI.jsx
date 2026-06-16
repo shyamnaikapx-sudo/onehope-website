@@ -30,10 +30,9 @@ const [loading, setLoading] = useState(false);
       setLoading(false);
 
     } catch (error) {
- setLoading(false);
-
-  alert("API Error");
-
+  console.error(error);
+  setLoading(false);
+  alert(error.message);
 }
 
   };

@@ -667,7 +667,8 @@ PROTOCOL QUALITY SCORE (0-100)
   console.error(error);
 
   res.status(500).json({
-    result: error.message
+    error: error.message,
+    details: error
   });
 }
 
