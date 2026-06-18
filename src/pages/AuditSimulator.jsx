@@ -24,8 +24,7 @@ const [loading, setLoading] = useState(false);
       setLoading(true);
 
       const response = await fetch(
-
-        "https://onehope-website.onrender.com/api/final-audit-report",
+  "https://onehope-website.onrender.com/api/final-audit-report",
 
         {
 
@@ -47,7 +46,19 @@ const [loading, setLoading] = useState(false);
 
       );
 
-      const data = await response.json();
+      console.log("STATUS:", response.status);
+
+const text = await response.text();
+
+console.log("RESPONSE:");
+console.log(text);
+
+if (!response.ok) {
+  alert(text);
+  return;
+}
+
+const data = JSON.parse(text);
 
       setFinalReport(data.result);
 

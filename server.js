@@ -285,6 +285,9 @@ console.error(error);
 });
 app.post("/api/ai-interview-start", async (req, res) => {
 
+  console.log("INTERVIEW START BODY:");
+  console.log(req.body);
+
   try {
 
     const {
@@ -362,6 +365,9 @@ Ask one realistic interview question based on candidate interest.`
 
 });
 app.post("/api/ai-interview", async (req, res) => {
+
+  console.log("INTERVIEW BODY:");
+  console.log(req.body);
 
   try {
 

@@ -44,7 +44,7 @@ const sendMessage = async () => {
   try {
 
 const response = await fetch(
-  "https://onehope-live.onrender.com/api/interactive-audit",
+  "https://onehope-website.onrender.com/api/interactive-audit",
   {
     method: "POST",
 

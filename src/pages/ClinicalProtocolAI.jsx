@@ -10,23 +10,29 @@ const [loading, setLoading] = useState(false);
  setLoading(true);
     try {
 
-      const response = await fetch(
-        "https://onehope-website.onrender.com/api/clinical-protocol-analysis",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-  protocolText,
-  reviewType,
-}),
-        }
-      );
+const response = await fetch(
+  "https://onehope-website.onrender.com/api/clinical-protocol-analysis",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      protocolText,
+      reviewType,
+    }),
+  }
+);
 
-      const data = await response.json();
+const data = await response.json();
 
-      setResult(data.result);
+console.log("Response:", data);
+
+if (!response.ok) {
+  throw new Error(data.error || "API Error");
+}
+
+setResult(data.result);
       setLoading(false);
 
     } catch (error) {

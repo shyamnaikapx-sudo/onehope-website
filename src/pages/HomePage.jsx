@@ -21,7 +21,7 @@ const askAI = async () => {
     try {
 
       const response = await fetch(
-        "https://onehope-live.onrender.com/api/ask-ai",
+        "https://onehope-website.onrender.com/api/ask-ai",
         {
           method: "POST",
 

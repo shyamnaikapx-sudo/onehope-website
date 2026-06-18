@@ -66,8 +66,14 @@ setLoading(true);
 
     if (!response.ok) {
 
-  throw new Error("API failed");
+  const errorText = await response.text();
 
+  console.log("START ERROR:");
+  console.log(errorText);
+
+  alert(errorText);
+
+  throw new Error(errorText);
 }
 
 const data = await response.json();
@@ -127,7 +133,7 @@ setTimeout(() => {
   try {
 
    const response = await fetch(
-  "https://onehope-live.onrender.com/api/ai-interview",
+  "https://onehope-website.onrender.com/api/ai-interview",
   {
     method: "POST",
 
