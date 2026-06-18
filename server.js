@@ -211,7 +211,10 @@ app.post("/api/interactive-audit", async (req, res) => {
 console.log("INTERACTIVE AUDIT REQUEST");
 console.log(JSON.stringify(req.body, null, 2));
     const { messages } = req.body;
-
+ console.log("MESSAGES RECEIVED:");
+    console.log(
+      JSON.stringify(messages, null, 2)
+    );
 
     const completion =
       await client.chat.completions.create({
@@ -280,6 +283,8 @@ console.log(
 
     console.error("INTERACTIVE AUDIT ERROR:");
 console.error(error);
+console.error("MESSAGE:");
+  console.error(error.message);
 
     res.status(500).json({
       reply: "AI audit simulation error"
