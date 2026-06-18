@@ -58,9 +58,26 @@ const response = await fetch(
   }
 );
 
-    const data = await response.json();
+    const text = await response.text();
 
-    console.log("AI RESPONSE:", data);
+console.log("STATUS:", response.status);
+console.log("RESPONSE:", text);
+
+let data;
+
+try {
+  data = JSON.parse(text);
+} catch (err) {
+  alert("Invalid server response");
+  setLoading(false);
+  return;
+}
+
+if (!response.ok) {
+  alert(data.reply || data.error || "AI Audit Error");
+  setLoading(false);
+  return;
+}
 
     if (data.reply) {
 if (
