@@ -15,60 +15,63 @@ const [answers, setAnswers] = useState({});
 const [finalReport, setFinalReport] = useState("");
 
 const [loading, setLoading] = useState(false);
- const generateFinalReport = async (
-  finalAnswers
-) => {
+const generateFinalReport = async (finalAnswers) => {
+  try {
+    setLoading(true);
+
+    console.log("Audit Type:", auditType);
+    console.log("Answers:", finalAnswers);
+
+    const response = await fetch(
+      "https://onehope-website.onrender.com/api/final-audit-report",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          auditType,
+          answers: finalAnswers,
+        }),
+      }
+    );
+
+    const text = await response.text();
+
+    console.log("STATUS:", response.status);
+    console.log("RESPONSE:", text);
+
+    let data;
 
     try {
-
-      setLoading(true);
-
-      const response = await fetch(
-  "https://onehope-website.onrender.com/api/final-audit-report",
-
-        {
-
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-
-          body: JSON.stringify({
-
-            auditType,
-
-            answers: finalAnswers,
-
-          }),
-
-        }
-
-      );
-
-      console.log("STATUS:", response.status);
-
-const text = await response.text();
-
-console.log("RESPONSE:");
-console.log(text);
-
-if (!response.ok) {
-  alert(text);
-  return;
-}
-
-const data = JSON.parse(text);
-
-      setFinalReport(data.result);
-
+      data = JSON.parse(text);
+    } catch (err) {
+      alert("Invalid response received from server");
       setLoading(false);
+      return;
+    }
 
-    } catch (error) {
-
-      console.log(error);
-
+    if (!response.ok) {
+      alert(data.error || "Audit report generation failed");
       setLoading(false);
+      return;
+    }
+
+    setFinalReport(data.result);
+
+  } catch (error) {
+
+    console.error("AUDIT REPORT ERROR:");
+    console.error(error);
+
+    alert(error.message);
+
+  } finally {
+
+    setLoading(false);
+
+  }
+};
 
     }
 

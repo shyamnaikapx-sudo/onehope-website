@@ -124,7 +124,8 @@ app.post("/api/ask-ai", async (req, res) => {
 app.post("/api/final-audit-report", async (req, res) => {
 
   try {
-
+console.log("FINAL REPORT REQUEST");
+console.log(JSON.stringify(req.body, null, 2));
     const {
       auditType,
       answers,
