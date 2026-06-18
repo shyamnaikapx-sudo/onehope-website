@@ -73,9 +73,6 @@ const generateFinalReport = async (finalAnswers) => {
   }
 };
 
-    }
-
-  };
  
 const currentQuestions =
     auditType === "WHO GMP"
