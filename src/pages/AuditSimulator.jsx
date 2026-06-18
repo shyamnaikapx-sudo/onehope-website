@@ -1,3 +1,4 @@
+import { API_URL } from "../config/api";
 import { useState } from "react";
 
 import { auditQuestions } from "../data/auditQuestions";
@@ -22,9 +23,9 @@ const generateFinalReport = async (finalAnswers) => {
     console.log("Audit Type:", auditType);
     console.log("Answers:", finalAnswers);
 
-    const response = await fetch(
-      "https://onehope-website.onrender.com/api/final-audit-report",
-      {
+  const response = await fetch(
+  `${API_URL}/api/final-audit-report`,
+  {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

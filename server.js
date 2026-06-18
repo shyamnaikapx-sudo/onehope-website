@@ -208,7 +208,8 @@ Keep response professional, concise and enterprise-grade.`
 app.post("/api/interactive-audit", async (req, res) => {
 
   try {
-
+console.log("INTERACTIVE AUDIT REQUEST");
+console.log(JSON.stringify(req.body, null, 2));
     const { messages } = req.body;
 
 
@@ -264,7 +265,10 @@ Then recommend professional audit support from One Hope Solution.`
         max_tokens: 500,
 
       });
-
+console.log("AI RESPONSE:");
+console.log(
+  completion.choices[0].message.content
+);
     res.json({
 
       reply:
